@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Canvas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        #controls {
+            margin-bottom: 20px;
+        }
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 0 auto;
+        }
+        .selected {
+            border: 2px solid red;
+        }
+        .transform-controls {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <label for="shape">Selecciona una forma:</label>
+        <select id="shape">
+            <option value="rectangle">Rectángulo</option>
+            <option value="circle">Círculo</option>
+        </select>
+        <button id="clear">Limpiar Canvas</button>
+    </div>
+    <canvas id="canvas" width="800" height="600"></canvas>
+
+    <div class="transform-controls">
+        <h3>Transformaciones</h3>
+        <label for="scaleX">Escala X:</label>
+        <input type="number" id="scaleX" step="0.1" value="1">
+        <label for="scaleY">Escala Y:</label>
+        <input type="number" id="scaleY" step="0.1" value="1">
+        <button id="applyScale">Aplicar Escala</button><br><br>
+
+        <label for="translateX">Traslación X:</label>
+        <input type="number" id="translateX" value="0">
+        <label for="translateY">Traslación Y:</label>
+        <input type="number" id="translateY" value="0">
+        <button id="applyTranslation">Aplicar Traslación</button><br><br>
+
+        <label for="rotation">Rotación (grados):</label>
+        <input type="number" id="rotation" value="0">
+        <button id="applyRotation">Aplicar Rotación</button>
+    </div>
+
+    <script src="convertidor.js"></script>
+</body>
+</html>
